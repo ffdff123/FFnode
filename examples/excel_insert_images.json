@@ -1,0 +1,60 @@
+{
+  "last_node_id": 1,
+  "last_link_id": 0,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "FF_Excel_Insert_Images",
+      "pos": [
+        120,
+        100
+      ],
+      "size": [
+        570,
+        410
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "excel_path",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "inserted_count",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "report",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FF_Excel_Insert_Images"
+      },
+      "widgets_values": [
+        "",
+        2,
+        2,
+        8,
+        3,
+        "",
+        0,
+        "嵌入单元格（WPS）",
+        2,
+        "skip",
+        ""
+      ]
+    }
+  ],
+  "links": [],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}

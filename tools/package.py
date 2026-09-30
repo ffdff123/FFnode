@@ -37,10 +37,26 @@ def build():
     examples = ROOT / "examples"
     examples.mkdir(exist_ok=True)
     (examples / "text_to_image.json").write_text(json.dumps(workflow, ensure_ascii=False, indent=2), encoding="utf-8")
+    excel_workflow = {
+        "last_node_id": 1, "last_link_id": 0,
+        "nodes": [{
+            "id": 1, "type": "FF_Excel_Insert_Images", "pos": [120, 100], "size": [570, 410],
+            "flags": {}, "order": 0, "mode": 0, "inputs": [],
+            "outputs": [
+                {"name": "excel_path", "type": "STRING", "links": None},
+                {"name": "inserted_count", "type": "INT", "links": None},
+                {"name": "report", "type": "STRING", "links": None},
+            ],
+            "properties": {"Node name for S&R": "FF_Excel_Insert_Images"},
+            "widgets_values": ["", 2, 2, 8, 3, "", 0, "嵌入单元格（WPS）", 2, "skip", ""],
+        }],
+        "links": [], "groups": [], "config": {}, "extra": {}, "version": 0.4,
+    }
+    (examples / "excel_insert_images.json").write_text(json.dumps(excel_workflow, ensure_ascii=False, indent=2), encoding="utf-8")
     dist = ROOT / "dist"
     dist.mkdir(exist_ok=True)
     target = dist / "comfyui_ffnode.zip"
-    paths = [ROOT / name for name in ("__init__.py", "nodes.py", "image_api.py", "requirements.txt", "README.md")]
+    paths = [ROOT / name for name in ("__init__.py", "nodes.py", "image_api.py", "excel_images.py", "xlsx_images.py", "requirements.txt", "README.md")]
     for folder in ("web", "examples", "tests", "tools"):
         paths.extend(p for p in (ROOT / folder).rglob("*") if p.is_file() and "__pycache__" not in p.parts)
     with ZipFile(target, "w", ZIP_DEFLATED) as archive:
