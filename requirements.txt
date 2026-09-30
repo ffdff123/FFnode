@@ -1,0 +1,4 @@
+aiohttp>=3.9,<4
+numpy>=1.24
+Pillow>=10
+# torch is supplied by ComfyUI; do not replace its CUDA build.
